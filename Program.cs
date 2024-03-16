@@ -12,6 +12,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -46,12 +47,8 @@ app.UseEndpoints(endpoints =>
 
 public class btnLogin_Click
 {
-    // Код обработчика кнопки Login
     protected void btnLogin_Click1(object sender, EventArgs e)
     {
-        // Здесь может быть код для проверки логина и пароля
-
-        // Перенаправляем пользователя на другую страницу или выполняем другие действия
     }
 
 }
@@ -61,20 +58,13 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Login(string username, string password)
     {
-        // Здесь вы можете добавить логику для аутентификации пользователя
-        // Например, проверить логин и пароль в базе данных или в другом месте
 
         if (username == "admin" && password == "password")
         {
-            // Если пользователь успешно аутентифицирован, выполните необходимые действия
-            // Например, перенаправьте его на другую страницу или верните JSON-ответ
-
             return Ok(new { message = "Login successful" });
         }
         else
         {
-            // Если аутентификация не удалась, верните соответствующий статус или сообщение об ошибке
-
             return Unauthorized(new { message = "Invalid username or password" });
         }
     }
